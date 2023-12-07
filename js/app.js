@@ -170,43 +170,44 @@ window.addEventListener("load", () => {
 
     // Accions pantalla inicial
     let count = 0 // Contador per anar passant les àrees TIC
+    let count2 = 9
     let initial = document.querySelector(".initial-windows")
     let dashboard = document.querySelector(".dashboard-project")
     document.addEventListener("click", (event)=> {
         if (event.target.classList.contains("fa-shield-halved")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count = 2
+            count2 = 2
         }
         if (event.target.classList.contains("fa-circle-info")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count = 1
+            count2 = 1
         }
         if (event.target.classList.contains("fa-house-signal")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count = 0
+            count2 = 0
         }
         if (event.target.classList.contains("fa-hand-holding-dollar")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count = 3
+            count2 = 3
         }
         if (event.target.classList.contains("fa-tablet-screen-button")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count = 4
+            count2 = 4
         }
         if (event.target.classList.contains("fa-magnifying-glass-chart")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count = 6
+            count2 = 6
         }
         if (event.target.classList.contains("fa-scale-balanced")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count = 5
+            count2 = 5
         }
     })
 
@@ -215,7 +216,7 @@ window.addEventListener("load", () => {
         if (event.target.classList.contains("return")) {
             initial.classList.remove("disable")
             dashboard.classList.add("disable")
-            count = 4
+            count = count2
         }
     })
 
@@ -225,14 +226,17 @@ window.addEventListener("load", () => {
     let porlets = ""
     let ods = ""
     setInterval(() => {
+        if (count2 != 9) {
+            count = count2
+        }
         if (data[count].projecteProjects != undefined) {
             data[count].projecteProjects.map(element => {
                 porlets = porlets + `<div class="porlet">
                 <span>${element.name}</span>
                 <span>Nº tasques pendents</span>
                 <span class="value">
-                    ${element.tasks}
                     <img src="./img/progress_bar/barra${element.progres == "0%" ? "1" : element.progres == "30%" ? "2" : "3"}.png">
+                    ${element.tasks}
                 </span>
                 
             </div>`

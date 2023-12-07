@@ -48,14 +48,17 @@ body {
 
 .definition p:nth-child(1) {
     width: 100%;
-    font-size: 2em;
+    font-size: 1.6em;
     margin-bottom: .6em;
+    text-align: center;
 }
 
 .definition p:nth-child(2) {
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.1em;
+    line-height: 1.5;
     margin-bottom: 1em;
+    text-align: center;
 }
 
 .initial-windows .definition .organization {
@@ -206,25 +209,28 @@ body {
 
 .dashboard-project .header {
     width: 100%;
-    height: 200px;
-    margin: 3em auto 1em;
+    margin: 1em auto;
 }
 
 .dashboard-project .header h1 {
-    font-size: 3vw;
+    font-size: 1.6em;
+    text-align: center;
 }
 
 .dashboard-project .header p {
     margin-top: 1em;
-    font-size: 2vw;
+    font-size: 1em;
+    text-align: center;
 }
 
 .dashboard-project .porlets {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     column-gap: 30px;
-    margin: 4em auto 1em;
+    row-gap: 30px;
+    margin: .5em auto;
 }
 
 .dashboard-project .porlets .porlet {
@@ -242,11 +248,11 @@ body {
 }
 
 .dashboard-project .porlets .porlet span:nth-child(1) {
-    font-size: 1.7vw;
+    font-size: 1em;
 }
 
 .dashboard-project .porlets .porlet span:nth-child(2) {
-    font-size: 6vw;
+    font-size: 3em;
 }
 
 .dashboard-project .porlets .porlet:nth-child(1) {
@@ -267,23 +273,22 @@ body {
 
 .dashboard-project .task-week {
     width: 100%;
-    margin-top: 2em;
-    font-size: 1.7vw;
+    margin-top: 1em;
+    font-size: 1em;
 }
 
 .dashboard-project .task-week .porlets {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    column-gap: 30px;
-    row-gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 1em auto;
 }
 
 .dashboard-project .task-week .porlets .porlet {
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     display: flex;
     justify-content: space-around;
     align-items: start;
@@ -294,19 +299,21 @@ body {
 
 .dashboard-project .task-week .porlets .porlet span {
     margin-left: 10px;
-    font-size: .9vw;
+    margin-right: 10px;
+    font-size: 1em;
 }
 
 .dashboard-project .task-week .porlets .porlet span:last-child {
-    font-size: 1.4vw;
+    font-size: 1.3em;
     display: grid;
-    grid-template-columns: 1fr 7fr;
+    grid-template-columns: 2fr 4fr;
     margin: 0 auto;
-    padding-left: .5em;
+    padding-right: .6em;
+    text-align: end;
 }
 
 .dashboard-project .task-week .porlets .porlet img {
-    width: 40%;
+    width: 70%;
     margin: .5em auto;
 }
 
@@ -315,16 +322,19 @@ body {
 }
 
 .dashboard-project .footer {
-    bottom: 0;
     width: 90%;
     height: 100px;
-    position: fixed;
     margin: 1em auto;
+    text-align: start;
+    position: absolute;
+    bottom: 0;
+    font-size: .8em;
 }
 
 .dashboard-project .footer img {
-    width: 90px;
-    margin-right: .8em;
+    width: 60px;
+    margin: 0 auto;
+    padding: .4em;
 }
 
 /* Pantalles desactivades */
@@ -346,10 +356,19 @@ body {
 
     .definition p:nth-child(1) {
         margin-bottom: 1em;
+        font-size: 2em;
+        text-align: start;
+    }
+
+    .definition p:nth-child(1) br {
+        display: none;
     }
 
     .definition p:nth-child(2) {
         margin-bottom: 2em;
+        font-size: 1.5em;
+        text-align: start;
+        line-height: normal;
     }
 
     .initial-windows .definition .organization {
@@ -387,6 +406,76 @@ body {
     .goal .goal-porlet {
         padding-left: 1em;
         padding-right: 0;
+    }
+
+    /* Pantalles de dashboards */
+    .dashboard-project .header {
+        height: 200px;
+        margin: 3em auto 1em;
+    }
+
+    .dashboard-project .header h1 {
+        font-size: 3vw;
+        text-align: start;
+    }
+    
+    .dashboard-project .header p {
+        font-size: 2vw;
+        text-align: start;
+    }
+
+    .dashboard-project .porlets {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        row-gap: 0;
+        margin: 4em auto 1em;
+    }
+
+    .dashboard-project .porlets .porlet span:nth-child(1) {
+        font-size: 1.7vw;
+    }
+    
+    .dashboard-project .porlets .porlet span:nth-child(2) {
+        font-size: 6vw;
+    }
+
+    .dashboard-project .task-week {
+        margin-top: 2em;
+        font-size: 1.7vw;
+    }
+
+    .dashboard-project .task-week .porlets {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+
+    .dashboard-project .task-week .porlets .porlet {
+        height: 10vh;
+    }
+
+    .dashboard-project .task-week .porlets .porlet span {  
+        font-size: .9vw;
+    }
+
+    .dashboard-project .task-week .porlets .porlet span:last-child {
+        font-size: 1.4vw;
+        align-items: center;
+        grid-template-columns: 3fr 7fr;
+    }
+
+    .dashboard-project .footer {
+        position: fixed;
+        margin: 1em auto;
+        font-size: 1em;
+    }
+    
+    .dashboard-project .footer img {
+        width: 90px;
+        margin-right: .8em;
     }
     
 }
