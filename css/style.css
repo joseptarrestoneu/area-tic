@@ -93,6 +93,13 @@ body {
 
 .arees span i {
     cursor: pointer;
+    animation: latidos 4s infinite;
+}
+
+@keyframes latidos {
+    from { transform: none; }
+    50% { transform: scale(1.2); }
+    to { transform: none; }
 }
 
 .initial-windows .strategic-plan {
