@@ -169,46 +169,97 @@ window.addEventListener("load", () => {
     ]
 
     // Accions pantalla inicial
-    let count = 0 // Contador per anar passant les àrees TIC
-    let count2 = 9
+    let count; // Contador per anar passant les àrees TIC
     let initial = document.querySelector(".initial-windows")
     let dashboard = document.querySelector(".dashboard-project")
+    let project = document.querySelector(".dashboard-project")
     document.addEventListener("click", (event)=> {
         if (event.target.classList.contains("fa-shield-halved")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count2 = 2
+            count = 2
         }
         if (event.target.classList.contains("fa-circle-info")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count2 = 1
+            count = 1
         }
         if (event.target.classList.contains("fa-house-signal")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count2 = 0
+            count = 0
         }
         if (event.target.classList.contains("fa-hand-holding-dollar")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count2 = 3
+            count = 3
         }
         if (event.target.classList.contains("fa-tablet-screen-button")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count2 = 4
+            count = 4
         }
         if (event.target.classList.contains("fa-magnifying-glass-chart")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count2 = 6
+            count = 6
         }
         if (event.target.classList.contains("fa-scale-balanced")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
-            count2 = 5
+            count = 5
         }
+        if (data[count].projecteProjects != undefined) {
+            data[count].projecteProjects.map(element => {
+                porlets = porlets + `<div class="porlet">
+                <span>${element.name}</span>
+                <span>Nº tasques pendents</span>
+                <span class="value">
+                    <img src="./img/progress_bar/barra${element.progres == "0%" ? "1" : element.progres == "30%" ? "2" : "3"}.png">
+                    ${element.tasks}
+                </span>
+                
+            </div>`
+            })
+        }
+        if (data[count].projectODS != undefined) {
+            data[count].projectODS.map(element => {
+                ods = ods + `<img src="./img/S-WEB-Goal-${element}.png">`
+            })
+        }
+        project.innerHTML = `
+        <div class="header">
+                <h1 class="project-name">${data[count].projectName}</h1>
+                <p class="project-name">${data[count].projectDescription}</p>
+            </div>
+            <div class="porlets">
+                <div class="porlet num-task-totals">
+                    <span>Nº tasques totals</span>
+                    <span class="value">${data[count].projectNumTaskTotals}</span>
+                </div>
+                <div class="porlet num-task-pending">
+                    <span>Nº tasques pendents</span>
+                    <span class="value">${data[count].projectNumTaskPending}</span>
+                </div>
+                <div class="porlet num-task-delayed">
+                    <span>Nº tasques amb retard</span>
+                    <span class="value">${data[count].projectNumTaskDelayed}</span>
+                </div>
+                <div class="porlet num-task-closed">
+                    <span>Nº tasques tancades</span>
+                    <span class="value">${data[count].projectNumTaskClosed}</span>
+                </div>
+            </div>
+            <div class="task-week">
+                <p>Projectes actius inclosos en aquesta àrea</p>
+                <div class="porlets">${porlets}</div>
+                <p class="task"></p>
+            </div>
+            <div class="footer ods-images">
+                ${ods}
+                <p class="return">Informació sobre accions de l'àrea TIC de Sant Tomàs</p>
+            </div>
+        `
     })
 
     // Acció retorn pàgina principal
@@ -216,19 +267,14 @@ window.addEventListener("load", () => {
         if (event.target.classList.contains("return")) {
             initial.classList.remove("disable")
             dashboard.classList.add("disable")
-            count = count2
         }
     })
 
     // Accions dasboard tasques
-    let project = document.querySelector(".dashboard-project")
     let longitud = data.length
     let porlets = ""
     let ods = ""
     setInterval(() => {
-        if (count2 != 9) {
-            count = count2
-        }
         if (data[count].projecteProjects != undefined) {
             data[count].projecteProjects.map(element => {
                 porlets = porlets + `<div class="porlet">
@@ -287,5 +333,5 @@ window.addEventListener("load", () => {
         }
         porlets = ""
         ods = ""
-    },20000)  
+    },10000)  
 });

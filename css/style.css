@@ -277,6 +277,10 @@ body {
     font-size: 1em;
 }
 
+.dashboard-project .task-week p:first-of-type {
+    text-align: center;
+}
+
 .dashboard-project .task-week .porlets {
     width: 100%;
     display: flex;
@@ -322,19 +326,17 @@ body {
 }
 
 .dashboard-project .footer {
-    width: 90%;
+    width: 100%;
     height: 100px;
     margin: 1em auto;
     text-align: start;
-    position: absolute;
-    bottom: 0;
     font-size: .8em;
 }
 
 .dashboard-project .footer img {
     width: 60px;
     margin: 0 auto;
-    padding: .4em;
+    padding-right: .4em;
 }
 
 /* Pantalles desactivades */
@@ -445,6 +447,10 @@ body {
         font-size: 1.7vw;
     }
 
+    .dashboard-project .task-week p:first-of-type {
+        text-align: start;
+    }
+
     .dashboard-project .task-week .porlets {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -468,6 +474,8 @@ body {
     }
 
     .dashboard-project .footer {
+        width: 90%;
+        bottom: 0;
         position: fixed;
         margin: 1em auto;
         font-size: 1em;
