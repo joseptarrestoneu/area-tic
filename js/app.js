@@ -257,9 +257,12 @@ window.addEventListener("load", () => {
             </div>
             <div class="footer ods-images">
                 ${ods}
-                <p class="return">Informació sobre accions de l'àrea TIC de Sant Tomàs</p>
+                <p class="return">Pla Estratègic Àrea TIC Fundació Sant Tomàs &#10140;</p>
+                <p class="return">Elaborat per Josep Tarrés Toneu &#169; 2023</p>
             </div>
         `
+        porlets = ""
+        ods = ""
     })
 
     // Acció retorn pàgina principal
@@ -274,64 +277,67 @@ window.addEventListener("load", () => {
     let longitud = data.length
     let porlets = ""
     let ods = ""
-    setInterval(() => {
-        if (data[count].projecteProjects != undefined) {
-            data[count].projecteProjects.map(element => {
-                porlets = porlets + `<div class="porlet">
-                <span>${element.name}</span>
-                <span>Nº tasques pendents</span>
-                <span class="value">
-                    <img src="./img/progress_bar/barra${element.progres == "0%" ? "1" : element.progres == "30%" ? "2" : "3"}.png">
-                    ${element.tasks}
-                </span>
-                
-            </div>`
-            })
-        }
-        if (data[count].projectODS != undefined) {
-            data[count].projectODS.map(element => {
-                ods = ods + `<img src="./img/S-WEB-Goal-${element}.png">`
-            })
-        }
-        if (count < longitud-1) {
-            count = count + 1;
-        } else {
-            count = 0;
-        }
-        project.innerHTML = `
-        <div class="header">
-                <h1 class="project-name">${data[count].projectName}</h1>
-                <p class="project-name">${data[count].projectDescription}</p>
-            </div>
-            <div class="porlets">
-                <div class="porlet num-task-totals">
-                    <span>Nº tasques totals</span>
-                    <span class="value">${data[count].projectNumTaskTotals}</span>
-                </div>
-                <div class="porlet num-task-pending">
+    if (screen.width > 576) {
+        setInterval(() => {
+            if (data[count].projecteProjects != undefined) {
+                data[count].projecteProjects.map(element => {
+                    porlets = porlets + `<div class="porlet">
+                    <span>${element.name}</span>
                     <span>Nº tasques pendents</span>
-                    <span class="value">${data[count].projectNumTaskPending}</span>
+                    <span class="value">
+                        <img src="./img/progress_bar/barra${element.progres == "0%" ? "1" : element.progres == "30%" ? "2" : "3"}.png">
+                        ${element.tasks}
+                    </span>
+                    
+                </div>`
+                })
+            }
+            if (data[count].projectODS != undefined) {
+                data[count].projectODS.map(element => {
+                    ods = ods + `<img src="./img/S-WEB-Goal-${element}.png">`
+                })
+            }
+            if (count < longitud-1) {
+                count = count + 1;
+            } else {
+                count = 0;
+            }
+            project.innerHTML = `
+            <div class="header">
+                    <h1 class="project-name">${data[count].projectName}</h1>
+                    <p class="project-name">${data[count].projectDescription}</p>
                 </div>
-                <div class="porlet num-task-delayed">
-                    <span>Nº tasques amb retard</span>
-                    <span class="value">${data[count].projectNumTaskDelayed}</span>
+                <div class="porlets">
+                    <div class="porlet num-task-totals">
+                        <span>Nº tasques totals</span>
+                        <span class="value">${data[count].projectNumTaskTotals}</span>
+                    </div>
+                    <div class="porlet num-task-pending">
+                        <span>Nº tasques pendents</span>
+                        <span class="value">${data[count].projectNumTaskPending}</span>
+                    </div>
+                    <div class="porlet num-task-delayed">
+                        <span>Nº tasques amb retard</span>
+                        <span class="value">${data[count].projectNumTaskDelayed}</span>
+                    </div>
+                    <div class="porlet num-task-closed">
+                        <span>Nº tasques tancades</span>
+                        <span class="value">${data[count].projectNumTaskClosed}</span>
+                    </div>
                 </div>
-                <div class="porlet num-task-closed">
-                    <span>Nº tasques tancades</span>
-                    <span class="value">${data[count].projectNumTaskClosed}</span>
+                <div class="task-week">
+                    <p>Projectes actius inclosos en aquesta àrea</p>
+                    <div class="porlets">${porlets}</div>
+                    <p class="task"></p>
                 </div>
-            </div>
-            <div class="task-week">
-                <p>Projectes actius inclosos en aquesta àrea</p>
-                <div class="porlets">${porlets}</div>
-                <p class="task"></p>
-            </div>
-            <div class="footer ods-images">
-                ${ods}
-                <p class="return">Informació sobre accions de l'àrea TIC de Sant Tomàs</p>
-            </div>
-        `
-        porlets = ""
-        ods = ""
-    },10000)  
+                <div class="footer ods-images">
+                    ${ods}
+                    <p class="return">Informació sobre accions de l'àrea TIC de Sant Tomàs</p>
+                </div>
+            `
+            porlets = ""
+            ods = ""
+        },10000)  
+    }
+   
 });
