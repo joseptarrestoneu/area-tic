@@ -293,6 +293,11 @@ window.addEventListener("load", () => {
                 ods = ods + `<img src="./img/S-WEB-Goal-${element}.png">`
             })
         }
+        if (count < longitud-1) {
+            count = count + 1;
+        } else {
+            count = 0;
+        }
         project.innerHTML = `
         <div class="header">
                 <h1 class="project-name">${data[count].projectName}</h1>
@@ -326,11 +331,6 @@ window.addEventListener("load", () => {
                 <p class="return">Informació sobre accions de l'àrea TIC de Sant Tomàs</p>
             </div>
         `
-        if (count < longitud-1) {
-            count = count + 1;
-        } else {
-            count = 0;
-        }
         porlets = ""
         ods = ""
     },10000)  
