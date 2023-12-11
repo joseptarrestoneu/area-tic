@@ -279,6 +279,8 @@ window.addEventListener("load", () => {
     let ods = ""
     if (screen.width > 576) {
         setInterval(() => {
+            porlets = ""
+            ods = ""
             if (data[count].projecteProjects != undefined) {
                 data[count].projecteProjects.map(element => {
                     porlets = porlets + `<div class="porlet">
@@ -288,7 +290,6 @@ window.addEventListener("load", () => {
                         <img src="./img/progress_bar/barra${element.progres == "0%" ? "1" : element.progres == "30%" ? "2" : "3"}.png">
                         ${element.tasks}
                     </span>
-                    
                 </div>`
                 })
             }
@@ -335,8 +336,6 @@ window.addEventListener("load", () => {
                     <p class="return">Informació sobre accions de l'àrea TIC de Sant Tomàs</p>
                 </div>
             `
-            porlets = ""
-            ods = ""
         },10000)  
     }
    
