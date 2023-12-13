@@ -119,7 +119,7 @@ window.addEventListener("load", () => {
             projectDescription: "Accions en relació al disseny, desenvolupament i implantació de projectes TIC a la Fundació Sant Tomàs.",
             projectInitialData: "-",
             projectFinalData: "-",
-            projectNumTaskTotals: 0,
+            projectNumTaskTotals: 1,
             projectNumTaskPending: 1,
             projectNumTaskDelayed: 1,
             projectNumTaskClosed: 0,

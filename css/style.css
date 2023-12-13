@@ -414,17 +414,17 @@ body {
 
     /* Pantalles de dashboards */
     .dashboard-project .header {
-        height: 200px;
-        margin: 3em auto .5em;
+        height: 125px;
+        margin: 2em auto .5em;
     }
 
     .dashboard-project .header h1 {
-        font-size: 3em;
+        font-size: 2em;
         text-align: start;
     }
     
     .dashboard-project .header p {
-        font-size: 2em;
+        font-size: 1.3em;
         text-align: start;
     }
 
@@ -433,20 +433,20 @@ body {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         row-gap: 0;
-        margin: 1em auto;
+        margin: .5em auto;
     }
 
     .dashboard-project .porlets .porlet span:nth-child(1) {
-        font-size: 1.7vw;
+        font-size: 1.3em;
     }
     
     .dashboard-project .porlets .porlet span:nth-child(2) {
-        font-size: 6vw;
+        font-size: 4em;
     }
 
     .dashboard-project .task-week {
         margin-top: 2em;
-        font-size: 1.7vw;
+        font-size: 1.5em;
     }
 
     .dashboard-project .task-week p:first-of-type {
@@ -457,20 +457,20 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        column-gap: 30px;
-        row-gap: 30px;
+        column-gap: 20px;
+        row-gap: 20px;
     }
 
     .dashboard-project .task-week .porlets .porlet {
-        height: 10vh;
+        height: 10opx;
     }
 
     .dashboard-project .task-week .porlets .porlet span {  
-        font-size: .9vw;
+        font-size: .5em;
     }
 
     .dashboard-project .task-week .porlets .porlet span:last-child {
-        font-size: 1.4vw;
+        font-size: .8em;
         align-items: center;
         grid-template-columns: 3fr 7fr;
     }
