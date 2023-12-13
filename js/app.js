@@ -431,5 +431,4 @@ window.addEventListener("load", () => {
     //         `
     //     },10000)  
     // }
-   
 });
