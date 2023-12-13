@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
                     tasks: "1/1",
                     initialData: "10/12/2023",
                     finalData: "31/01/2024",
-                    progres: "0%",
+                    progres: 0,
                     state: "open",
                 },
                 {
@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
                     tasks: "1/2",
                     initialData: "01/01/2023",
                     finalData: "31/01/2024",
-                    progres: "50%",
+                    progres: 0.5,
                     state: "open",
                 },
                 {
@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
                     tasks: "1/9",
                     initialData: "01/07/2023",
                     finalData: "31/01/2024",
-                    progres: "60%",
+                    progres: 0.6,
                     state: "open",
                 },
             ]
@@ -56,7 +56,7 @@ window.addEventListener("load", () => {
                     tasks: "1/1",
                     initialData: "01/12/2023",
                     finalData: "31/01/2024",
-                    progres: "0%",
+                    progres: 0,
                     state: "open",
                 },
             ]
@@ -78,7 +78,7 @@ window.addEventListener("load", () => {
                     tasks: "1/1",
                     initialData: "01/12/2023",
                     finalData: "31/01/2024",
-                    progres: "0%",
+                    progres: 0,
                     state: "open",
                 },
             ]
@@ -100,7 +100,7 @@ window.addEventListener("load", () => {
                     tasks: "1/1",
                     initialData: "08/12/2023",
                     finalData: "31/01/2024",
-                    progres: "75%",
+                    progres: 0.75,
                     state: "open",
                 },
                 {
@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
                     tasks: "1/4",
                     initialData: "01/11/2023",
                     finalData: "31/12/2024",
-                    progres: "10%",
+                    progres: 0.1,
                     state: "open",
                 },
             ]
@@ -130,7 +130,7 @@ window.addEventListener("load", () => {
                     tasks: "2/3",
                     initialData: "01/12/2023",
                     finalData: "31/12/2024",
-                    progres: "0%",
+                    progres: 0,
                     state: "open",
                 },
                 {
@@ -138,7 +138,7 @@ window.addEventListener("load", () => {
                     tasks: "0/15",
                     initialData: "01/10/2023",
                     finalData: "31/12/2024",
-                    progres: "0%",
+                    progres: 0,
                     state: "open",
                 },
                 {
@@ -146,7 +146,7 @@ window.addEventListener("load", () => {
                     tasks: "1/5",
                     initialData: "01/09/2023",
                     finalData: "31/01/2024",
-                    progres: "30%",
+                    progres: 0.3,
                     state: "open",
                 },
                 {
@@ -154,7 +154,7 @@ window.addEventListener("load", () => {
                     tasks: "3/30",
                     initialData: "01/01/2023",
                     finalData: "31/12/2024",
-                    progres: "60%",
+                    progres: 0.6,
                     state: "open",
                 },
                 {
@@ -162,7 +162,7 @@ window.addEventListener("load", () => {
                     tasks: "9/16",
                     initialData: "01/08/2023",
                     finalData: "31/12/2024",
-                    progres: "60%",
+                    progres: 0.6,
                     state: "open",
                 },
                 {
@@ -170,7 +170,7 @@ window.addEventListener("load", () => {
                     tasks: "1/1",
                     initialData: "04/12/2023",
                     finalData: "31/01/2024",
-                    progres: "0%",
+                    progres: 0,
                     state: "open",
                 },
                 {
@@ -178,7 +178,7 @@ window.addEventListener("load", () => {
                     tasks: "1/1",
                     initialData: "01/09/2023",
                     finalData: "31/06/2024",
-                    progres: "25%",
+                    progres: 0.25,
                     state: "open",
                 },
                 {
@@ -186,7 +186,7 @@ window.addEventListener("load", () => {
                     tasks: "0/0",
                     initialData: "01/01/2023",
                     finalData: "31/12/2024",
-                    progres: "0%",
+                    progres: 0,
                     state: "open",
                 },
                 {
@@ -194,7 +194,7 @@ window.addEventListener("load", () => {
                     tasks: "1/1",
                     initialData: "01/12/2023",
                     finalData: "31/12/2024",
-                    progres: "0%",
+                    progres: 0,
                     state: "open",
                 },
                 {
@@ -202,7 +202,7 @@ window.addEventListener("load", () => {
                     tasks: "1/1",
                     initialData: "01/09/2023",
                     finalData: "31/12/2024",
-                    progres: "50%",
+                    progres: 0.5,
                     state: "open",
                 },
             ]
@@ -237,7 +237,7 @@ window.addEventListener("load", () => {
                     tasks: "10/15",
                     initialData: "01/09/2023",
                     finalData: "31/07/2024",
-                    progres: "30%",
+                    progres: 0.3,
                     state: "open",
                 },
                 {
@@ -245,7 +245,7 @@ window.addEventListener("load", () => {
                     tasks: "1/4",
                     initialData: "01/09/2023",
                     finalData: "31/03/2024",
-                    progres: "30%",
+                    progres: 0.3,
                     state: "open",
                 },
                 {
@@ -253,7 +253,7 @@ window.addEventListener("load", () => {
                     tasks: "1/2",
                     initialData: "01/11/2023",
                     finalData: "31/01/2024",
-                    progres: "30%",
+                    progres: 0.3,
                     state: "open",
                 },
             ]
@@ -309,7 +309,7 @@ window.addEventListener("load", () => {
                 <span>${element.name}</span>
                 <span>Nº tasques pendents</span>
                 <span class="value">
-                    <img src="./img/progress_bar/barra${element.progres == "0%" ? "1" : element.progres == "30%" ? "2" : "3"}.png">
+                    <img src="./img/progress_bar/barra${element.progres <= 0.33 ? "1" : element.progres <= 0.66 ? "2" : "3"}.png">
                     ${element.tasks}
                 </span>
                 
