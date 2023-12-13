@@ -12,7 +12,32 @@ window.addEventListener("load", () => {
             projectNumTaskDelayed: 0,
             projectNumTaskClosed: 10,
             projectODS : ["09"],
-            projecteProjects: []
+            projecteProjects: [
+                {
+                    name: "Connexió Entigest i altres programes (TacProd)",
+                    tasks: "1/1",
+                    initialData: "10/12/2023",
+                    finalData: "31/01/2024",
+                    progres: "0%",
+                    state: "open",
+                },
+                {
+                    name: "Càmares de seguretat diferents centres Fundació Sant Tomàs",
+                    tasks: "1/2",
+                    initialData: "01/01/2023",
+                    finalData: "31/01/2024",
+                    progres: "50%",
+                    state: "open",
+                },
+                {
+                    name: "Integració software de Cafeteria amb Sage",
+                    tasks: "1/9",
+                    initialData: "01/07/2023",
+                    finalData: "31/01/2024",
+                    progres: "60%",
+                    state: "open",
+                },
+            ]
         },
         {
             projectArea: "SISTEMES, SEGURETAT I ATENCIÓ AL CLIENT",
@@ -25,7 +50,16 @@ window.addEventListener("load", () => {
             projectNumTaskDelayed: 1,
             projectNumTaskClosed: 9,
             projectODS : ["09"],
-            projecteProjects: []
+            projecteProjects: [
+                {
+                    name: "Pla de Formació TIC Fundació Sant Tomàs",
+                    tasks: "1/1",
+                    initialData: "01/12/2023",
+                    finalData: "31/01/2024",
+                    progres: "0%",
+                    state: "open",
+                },
+            ]
         },
         {
             projectArea: "SISTEMES, SEGURETAT I ATENCIÓ AL CLIENT",
@@ -38,7 +72,16 @@ window.addEventListener("load", () => {
             projectNumTaskDelayed: 6,
             projectNumTaskClosed: 2,
             projectODS : ["09"],
-            projecteProjects: []
+            projecteProjects: [
+                {
+                    name: "Elaborar Pla d'acció Ciberseguretat Fundació Sant Tomàs",
+                    tasks: "1/1",
+                    initialData: "01/12/2023",
+                    finalData: "31/01/2024",
+                    progres: "0%",
+                    state: "open",
+                },
+            ]
         },
         {
             projectArea: "PROJECTES I APLICACIONS",
@@ -51,7 +94,24 @@ window.addEventListener("load", () => {
             projectNumTaskDelayed: 2,
             projectNumTaskClosed: 10,
             projectODS : ["09", "17"],
-            projecteProjects: []
+            projecteProjects: [
+                {
+                    name: "Signatura conveni col·laboració entre Seidor i Fundació Sant Tomàs",
+                    tasks: "1/1",
+                    initialData: "08/12/2023",
+                    finalData: "31/01/2024",
+                    progres: "75%",
+                    state: "open",
+                },
+                {
+                    name: "Enclavament Seidor",
+                    tasks: "1/4",
+                    initialData: "01/11/2023",
+                    finalData: "31/12/2024",
+                    progres: "10%",
+                    state: "open",
+                },
+            ]
         },
         {
             projectArea: "PROJECTES I APLICACIONS",
@@ -106,19 +166,43 @@ window.addEventListener("load", () => {
                     state: "open",
                 },
                 {
-                    name: "Integració software de Cafeteria amb Sage",
-                    tasks: "1/9",
-                    initialData: "01/07/2023",
-                    finalData: "31/01/2024",
-                    progres: "60%",
-                    state: "open",
-                },
-                {
                     name: "Desenvolupar software de gestió de legionel·losi Fundació Sant Tomàs",
                     tasks: "1/1",
                     initialData: "04/12/2023",
                     finalData: "31/01/2024",
                     progres: "0%",
+                    state: "open",
+                },
+                {
+                    name: "Desenvolupar software de gestió Espai Viu de Fundació Sant Tomàs",
+                    tasks: "1/1",
+                    initialData: "01/09/2023",
+                    finalData: "31/06/2024",
+                    progres: "25%",
+                    state: "open",
+                },
+                {
+                    name: "CRM Fundació Sant Tomàs",
+                    tasks: "0/0",
+                    initialData: "01/01/2023",
+                    finalData: "31/12/2024",
+                    progres: "0%",
+                    state: "open",
+                },
+                {
+                    name: "Portal del Treballador de Fundació Sant Tomàs",
+                    tasks: "1/1",
+                    initialData: "01/12/2023",
+                    finalData: "31/12/2024",
+                    progres: "0%",
+                    state: "open",
+                },
+                {
+                    name: "Gestionar Docuware",
+                    tasks: "1/1",
+                    initialData: "01/09/2023",
+                    finalData: "31/12/2024",
+                    progres: "50%",
                     state: "open",
                 },
             ]
@@ -164,6 +248,14 @@ window.addEventListener("load", () => {
                     progres: "30%",
                     state: "open",
                 },
+                {
+                    name: "Enquestes famílies, clients i usuaris",
+                    tasks: "1/2",
+                    initialData: "01/11/2023",
+                    finalData: "31/01/2024",
+                    progres: "30%",
+                    state: "open",
+                },
             ]
         },
     ]
@@ -174,6 +266,8 @@ window.addEventListener("load", () => {
     let dashboard = document.querySelector(".dashboard-project")
     let project = document.querySelector(".dashboard-project")
     document.addEventListener("click", (event)=> {
+        let porlets = ""
+        let ods = ""
         if (event.target.classList.contains("fa-shield-halved")) {
             initial.classList.add("disable")
             dashboard.classList.remove("disable")
@@ -257,8 +351,7 @@ window.addEventListener("load", () => {
             </div>
             <div class="footer ods-images">
                 ${ods}
-                <p class="return">Pla Estratègic Àrea TIC Fundació Sant Tomàs &#10140;</p>
-                <p class="return">Elaborat per Josep Tarrés Toneu &#169; 2023</p>
+                <p class="return">Elaborat per Josep Tarrés Toneu &#169; 2023. Pla Estratègic Àrea TIC Fundació Sant Tomàs &#10140;</p>
             </div>
         `
         porlets = ""
@@ -273,70 +366,70 @@ window.addEventListener("load", () => {
         }
     })
 
-    // Accions dasboard tasques
-    let longitud = data.length
-    let porlets = ""
-    let ods = ""
-    if (screen.width > 576) {
-        setInterval(() => {
-            porlets = ""
-            ods = ""
-            if (data[count].projecteProjects != undefined) {
-                data[count].projecteProjects.map(element => {
-                    porlets = porlets + `<div class="porlet">
-                    <span>${element.name}</span>
-                    <span>Nº tasques pendents</span>
-                    <span class="value">
-                        <img src="./img/progress_bar/barra${element.progres == "0%" ? "1" : element.progres == "30%" ? "2" : "3"}.png">
-                        ${element.tasks}
-                    </span>
-                </div>`
-                })
-            }
-            if (data[count].projectODS != undefined) {
-                data[count].projectODS.map(element => {
-                    ods = ods + `<img src="./img/S-WEB-Goal-${element}.png">`
-                })
-            }
-            if (count < longitud-1) {
-                count = count + 1;
-            } else {
-                count = 0;
-            }
-            project.innerHTML = `
-            <div class="header">
-                    <h1 class="project-name">${data[count].projectName}</h1>
-                    <p class="project-name">${data[count].projectDescription}</p>
-                </div>
-                <div class="porlets">
-                    <div class="porlet num-task-totals">
-                        <span>Nº tasques totals</span>
-                        <span class="value">${data[count].projectNumTaskTotals}</span>
-                    </div>
-                    <div class="porlet num-task-pending">
-                        <span>Nº tasques pendents</span>
-                        <span class="value">${data[count].projectNumTaskPending}</span>
-                    </div>
-                    <div class="porlet num-task-delayed">
-                        <span>Nº tasques amb retard</span>
-                        <span class="value">${data[count].projectNumTaskDelayed}</span>
-                    </div>
-                    <div class="porlet num-task-closed">
-                        <span>Nº tasques tancades</span>
-                        <span class="value">${data[count].projectNumTaskClosed}</span>
-                    </div>
-                </div>
-                <div class="task-week">
-                    <p>Projectes actius inclosos en aquesta àrea</p>
-                    <div class="porlets">${porlets}</div>
-                    <p class="task"></p>
-                </div>
-                <div class="footer ods-images">
-                    ${ods}
-                    <p class="return">Informació sobre accions de l'àrea TIC de Sant Tomàs</p>
-                </div>
-            `
-        },10000)  
-    }
+    // // Accions dasboard tasques
+    // let longitud = data.length
+    // let porlets = ""
+    // let ods = ""
+    // if (screen.width > 576) {
+    //     setInterval(() => {
+    //         porlets = ""
+    //         ods = ""
+    //         if (data[count].projecteProjects != undefined) {
+    //             data[count].projecteProjects.map(element => {
+    //                 porlets = porlets + `<div class="porlet">
+    //                 <span>${element.name}</span>
+    //                 <span>Nº tasques pendents</span>
+    //                 <span class="value">
+    //                     <img src="./img/progress_bar/barra${element.progres == "0%" ? "1" : element.progres == "30%" ? "2" : "3"}.png">
+    //                     ${element.tasks}
+    //                 </span>
+    //             </div>`
+    //             })
+    //         }
+    //         if (data[count].projectODS != undefined) {
+    //             data[count].projectODS.map(element => {
+    //                 ods = ods + `<img src="./img/S-WEB-Goal-${element}.png">`
+    //             })
+    //         }
+    //         if (count < longitud-1) {
+    //             count = count + 1;
+    //         } else {
+    //             count = 0;
+    //         }
+    //         project.innerHTML = `
+    //         <div class="header">
+    //                 <h1 class="project-name">${data[count].projectName}</h1>
+    //                 <p class="project-name">${data[count].projectDescription}</p>
+    //             </div>
+    //             <div class="porlets">
+    //                 <div class="porlet num-task-totals">
+    //                     <span>Nº tasques totals</span>
+    //                     <span class="value">${data[count].projectNumTaskTotals}</span>
+    //                 </div>
+    //                 <div class="porlet num-task-pending">
+    //                     <span>Nº tasques pendents</span>
+    //                     <span class="value">${data[count].projectNumTaskPending}</span>
+    //                 </div>
+    //                 <div class="porlet num-task-delayed">
+    //                     <span>Nº tasques amb retard</span>
+    //                     <span class="value">${data[count].projectNumTaskDelayed}</span>
+    //                 </div>
+    //                 <div class="porlet num-task-closed">
+    //                     <span>Nº tasques tancades</span>
+    //                     <span class="value">${data[count].projectNumTaskClosed}</span>
+    //                 </div>
+    //             </div>
+    //             <div class="task-week">
+    //                 <p>Projectes actius inclosos en aquesta àrea</p>
+    //                 <div class="porlets">${porlets}</div>
+    //                 <p class="task"></p>
+    //             </div>
+    //             <div class="footer ods-images">
+    //                 ${ods}
+    //                 <p class="return">Informació sobre accions de l'àrea TIC de Sant Tomàs</p>
+    //             </div>
+    //         `
+    //     },10000)  
+    // }
    
 });
