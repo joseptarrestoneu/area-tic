@@ -205,6 +205,14 @@ window.addEventListener("load", () => {
                     progres: 0.5,
                     state: "open",
                 },
+                {
+                    name: "Software Gestió de Flotes",
+                    tasks: "0/3",
+                    initialData: "10/12/2023",
+                    finalData: "31/01/2024",
+                    progres: 0,
+                    state: "open",
+                },
             ]
         },
         {
