@@ -373,7 +373,6 @@ window.addEventListener("load", () => {
             dashboard.classList.add("disable")
         }
     })
-
     // // Accions dasboard tasques
     // let longitud = data.length
     // let porlets = ""
